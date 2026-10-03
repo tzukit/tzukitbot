@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>我的指令表</title>
+<meta name="description" content="聊天室指令一覽：包含指令說明、權限、冷卻與別名。">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main class="wrap">
+  <header class="pub-head">
+    <h1 data-site-title>我的指令表</h1>
+    <p class="lead">
+      在聊天室輸入下面的指令就會有反應。這個頻道的指令前綴是
+      <code data-site-prefix>!</code>，目前有 <b data-total>0</b> 個指令可以用。
+    </p>
+  </header>
+
+  <div class="pub-search">
+    <label class="sr-only" for="cmd-q">搜尋指令</label>
+    <input id="cmd-q" type="search" autocomplete="off" spellcheck="false"
+           placeholder="搜尋指令名稱或說明…" data-cmd-search>
+    <p class="count small muted" data-cmd-count hidden></p>
+  </div>
+
+  <div id="groups">
+    <p class="muted small" data-loading>載入中…</p>
+  </div>
+
+  <p class="empty" data-empty hidden>沒有符合的指令。換個關鍵字試試看。</p>
+
+  <p class="pub-note" data-note hidden>
+    找不到想要的？頁面內容由頻道主自行維護，隨時可能調整。
+  </p>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <span data-foot-title>指令表</span>
+    <span class="muted">指令由頻道主自行設定，隨時可能調整。</span>
+    <a href="admin.html" title="管理指令表">管理頁面</a>
+  </div>
+</footer>
+
+<script src="viewer.js" defer></script>
+</body>
+</html>

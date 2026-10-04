@@ -1,5 +1,210 @@
 {
   "title": "我的指令表",
   "prefix": "!",
-  "groups": []
+  "groups": [
+    {
+      "name": "頻道管理",
+      "commands": [
+        {
+          "name": "t",
+          "usage": "!t <new_title>",
+          "description": "設定頻道標題",
+          "permission": "管理員以上",
+          "cooldown": "全頻道 1 秒",
+          "aliases": []
+        },
+        {
+          "name": "g",
+          "usage": "!g <new_category>",
+          "description": "設定頻道分類／遊戲",
+          "permission": "管理員以上",
+          "cooldown": "全頻道 1 秒",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "預測",
+      "commands": [
+        {
+          "name": "adduser",
+          "usage": "!adduser <username>",
+          "description": "新增或移除授權名單使用者",
+          "permission": "管理員以上・授權名單",
+          "cooldown": "",
+          "aliases": []
+        },
+        {
+          "name": "removeuser",
+          "usage": "!removeuser <username>",
+          "description": "移除授權名單使用者",
+          "permission": "管理員以上・授權名單",
+          "cooldown": "",
+          "aliases": []
+        },
+        {
+          "name": "create_prediction",
+          "usage": "!開盤 <title> <outcome1> <outcome2> [...outcome8] <time_seconds>",
+          "description": "建立 Twitch 頻道預測（開盤）",
+          "permission": "管理員以上・授權名單",
+          "cooldown": "全頻道 1 秒",
+          "aliases": ["開盤", "startpred"]
+        },
+        {
+          "name": "end_prediction",
+          "usage": "!結盤 <outcome_name>",
+          "description": "以獲勝選項結算預測（結盤）",
+          "permission": "管理員以上・授權名單",
+          "cooldown": "全頻道 1 秒",
+          "aliases": ["結盤", "endpred"]
+        },
+        {
+          "name": "lock_prediction",
+          "usage": "!關盤 <seconds>",
+          "description": "鎖定預測、停止接受下注（關盤）",
+          "permission": "管理員以上・授權名單",
+          "cooldown": "全頻道 1 秒",
+          "aliases": ["關盤", "鎖盤", "lockpred"]
+        },
+        {
+          "name": "cancel_prediction",
+          "usage": "!退盤",
+          "description": "取消預測並全數退還點數（退盤）",
+          "permission": "管理員以上・授權名單",
+          "cooldown": "全頻道 1 秒",
+          "aliases": ["退盤", "cancelpred"]
+        }
+      ]
+    },
+    {
+      "name": "戰績查詢",
+      "commands": [
+        {
+          "name": "rank",
+          "description": "各遊戲段位指令總覽（TFT／韓服 LOL／VALORANT）",
+          "permission": "所有觀眾",
+          "cooldown": "",
+          "aliases": ["r"]
+        },
+        {
+          "name": "tftrank",
+          "usage": "!tftrank",
+          "description": "查詢指定玩家的 TFT 戰績",
+          "permission": "所有觀眾",
+          "cooldown": "全頻道 3 秒",
+          "aliases": ["tftr"]
+        },
+        {
+          "name": "krrank",
+          "usage": "!kr",
+          "description": "查詢韓服英雄聯盟（LoL KR）戰績",
+          "permission": "所有觀眾",
+          "cooldown": "全頻道 3 秒",
+          "aliases": ["kr", "krr"]
+        },
+        {
+          "name": "valrank",
+          "description": "查詢 VALORANT 競技戰績",
+          "permission": "所有觀眾",
+          "cooldown": "全頻道 3 秒",
+          "aliases": ["valr", "vr"]
+        }
+      ]
+    },
+    {
+      "name": "實用工具",
+      "commands": [
+        {
+          "name": "viewer_count",
+          "usage": "!守靈",
+          "description": "查詢聊天室目前人數",
+          "permission": "所有觀眾",
+          "cooldown": "",
+          "aliases": ["守靈"]
+        },
+        {
+          "name": "song",
+          "usage": "!song or !music",
+          "description": "顯示目前播放的 Spotify 歌曲",
+          "permission": "所有觀眾",
+          "cooldown": "全頻道 3 秒",
+          "aliases": ["music", "音樂", "spotify"]
+        },
+        {
+          "name": "selftimeout",
+          "usage": "!600 or !selftimeout",
+          "description": "自願被禁言 60 秒",
+          "permission": "所有觀眾",
+          "cooldown": "每人 1 秒",
+          "aliases": ["600", "60"]
+        },
+        {
+          "name": "special_selftimeout",
+          "usage": "!6oo or other lookalike spellings",
+          "description": "自願被禁言 60 秒（6oo 等相似拼寫版）",
+          "permission": "所有觀眾",
+          "cooldown": "每人 1 秒",
+          "aliases": ["6oo", "6o0", "6OO", "60o", "6oO", "6Oo"]
+        },
+        {
+          "name": "listcmd",
+          "usage": "!listcmd",
+          "description": "列出所有自訂指令",
+          "permission": "所有觀眾",
+          "cooldown": "全頻道 3 秒",
+          "aliases": []
+        },
+        {
+          "name": "listuser",
+          "usage": "!listuser",
+          "description": "列出所有授權使用者",
+          "permission": "所有觀眾",
+          "cooldown": "全頻道 3 秒",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "自訂指令管理",
+      "commands": [
+        {
+          "name": "addcmd",
+          "usage": "!addcmd <command_name> <reply_message>",
+          "description": "新增自訂指令",
+          "permission": "管理員以上",
+          "cooldown": "",
+          "aliases": []
+        },
+        {
+          "name": "removecmd",
+          "usage": "!removecmd <command_name>",
+          "description": "刪除自訂指令",
+          "permission": "管理員以上",
+          "cooldown": "",
+          "aliases": []
+        },
+        {
+          "name": "editcmd",
+          "usage": "!editcmd <command_name> <new_reply_message>",
+          "description": "編輯自訂指令",
+          "permission": "管理員以上",
+          "cooldown": "",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "娛樂",
+      "commands": [
+        {
+          "name": "fate",
+          "usage": "!運勢",
+          "description": "抽一張塔羅牌占卜今日運勢",
+          "permission": "所有觀眾",
+          "cooldown": "每人・每日 00:01 重置",
+          "aliases": ["運勢"]
+        }
+      ]
+    }
+  ]
 }

@@ -240,6 +240,7 @@ a:hover { text-decoration: underline; }
         if (!c || typeof c !== "object") return;
         group.commands.push({
           name: String(c.name || ""),
+          usage: (typeof c.usage === "string" && c.usage.trim()) ? c.usage : "",
           description: String(c.description || ""),
           permission: String(c.permission || ""),
           cooldown: String(c.cooldown || ""),
@@ -260,7 +261,7 @@ a:hover { text-decoration: underline; }
 
   function cmdHtml(c, prefix) {
     var h = '<article class="cmd">';
-    h += '<span class="usage">' + esc(prefix + c.name) + "</span>";
+    h += '<span class="usage">' + esc(c.usage || prefix + c.name) + "</span>";
     if (c.description) h += '<p class="sum">' + esc(c.description) + "</p>";
     var meta = [];
     if (c.permission) meta.push('<span class="badge brand">' + esc(c.permission) + "</span>");
